@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Task Master</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Update Task</h1>
+
+    <div class="form">
+        <form action="/update/{{task.id}}" method="POST">
+        	<label for="content" font-weight: bold;>Task:</label>
+            <input type="text" name="content" id="content" value="{{task.content}}" readonly><br><br>
+            <label for="assigned_to" font-weight: bold;>Assigned_to:</label>
+            <select name="assigned_to" id="assigned_to">
+            <option name="Anushank">{{task.assigned_to}}</option>
+            <option name="Anurag">Anushank</option>
+            <option name="Anurag">Anurag</option>
+            <option name="Ayushi">Ayushi</option>
+            <option name="Ravi">Ravi</option>
+            <option name="Rohit">Rohit</option>
+            <option name="Sagar">Sagar</option>
+            </select><br><br>
+            <label for="status" font-weight: bold;>Status:</label>
+            <select name="status" id="status">
+            <option name="Anurag">{{task.status}}</option>
+            <option name="Anurag">WIP</option>
+            <option name="Ayushi">Done</option>
+            <option name="Ravi">Next Day</option>
+            <option name="Rohit">Not me!</option>
+            <option name="Sagar">Already Done</option>
+            </select><br><br>
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</div>
+{% endblock %}
